@@ -9,7 +9,7 @@ from flask_validates import validates
 
 class FlaskValidatesTestCase(unittest.TestCase):
 
-    def make_test_app(self, form_cls, **fields):
+    def make_test_app(self, form_cls=None, **fields):
         app = Flask(__name__)
 
         @app.route("/", methods=["POST"])
@@ -18,4 +18,5 @@ class FlaskValidatesTestCase(unittest.TestCase):
             current_form.validate()
             return jsonify(current_form.data)
 
-        return app
+        self.app = app
+        self.client = app.test_client()
