@@ -18,6 +18,9 @@
       {{ form.comments.label }}
       {{ form.comments(rows=5, cols=40) }}
       <br>
+      {{ form.requires_followup.label }}
+      {{ form.requires_followup() }}
+      <br>
       <input type="submit" value="Submit" />
     </form>
   </body>

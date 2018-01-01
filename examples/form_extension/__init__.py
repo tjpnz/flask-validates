@@ -7,10 +7,17 @@ from flask import url_for
 
 from flask_validates import current_form
 from flask_validates import validates
+from wtforms import BooleanField
+from wtforms import Form
 from wtforms import StringField
 from wtforms import TextAreaField
 from wtforms.validators import DataRequired
 from wtforms.validators import Email
+
+
+class SimpleFeedbackForm(Form):
+    email_address = StringField(validators=[DataRequired(), Email()])
+    comments = TextAreaField(validators=[DataRequired()])
 
 
 def create_app():
@@ -18,10 +25,7 @@ def create_app():
     app.secret_key = "supersecret"
 
     @app.route("/", methods=["GET", "POST"])
-    @validates(
-        email=StringField(validators=[DataRequired(), Email()]),
-        comments=TextAreaField(validators=[DataRequired()])
-    )
+    @validates(SimpleFeedbackForm, requires_followup=BooleanField())
     def index():
         if request.method == "POST" and current_form.validate():
             flash("Your feedback has been submitted")
