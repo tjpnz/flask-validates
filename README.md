@@ -11,15 +11,15 @@ Most interaction with Flask-Validates is through `validates` for decorating view
 
 ```python
 @app.route("/", methods=["GET", "POST"])
-    @validates(
-        email_address=StringField("Email", validators=[DataRequired(), Email()]),
-        query=TextAreaField("Query", validators=[DataRequired()])
-    )
-    def index():
-        if request.method == "POST" and current_form.validate():
-            flash("Your feedback has been submitted")
-            return redirect(url_for("index"))
-        return render_template("contact_form.html.j2", form=current_form)
+@validates(
+    email_address=StringField("Email", validators=[DataRequired(), Email()]),
+    query=TextAreaField("Query", validators=[DataRequired()])
+)
+def index():
+    if request.method == "POST" and current_form.validate():
+        flash("Your feedback has been submitted")
+        return redirect(url_for("index"))
+    return render_template("contact_form.html.j2", form=current_form)
 ```
 
 More examples can be found in the `examples` directory.
