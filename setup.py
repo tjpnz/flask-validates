@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -20,8 +20,8 @@ setup(
     ],
     tests_require=[
         "Flask-WTF"
-    ]
-    test_suites="tests",
+    ],
+    test_suite="tests",
     classifiers=[
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
