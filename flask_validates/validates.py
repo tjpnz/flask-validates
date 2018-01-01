@@ -19,10 +19,25 @@ class FlaskValidates(object):
             self.init_app(app, form_cls)
 
     def init_app(self, app, form_cls=None):
+        """Initializes FlaskValidates with given ``app``.
+
+        The default form class used by FlaskValidates can be overridden by
+        specifying ``form_cls``.
+        """
         app.config["FLASK_VALIDATES_FORM_CLASS"] = form_cls
 
 
 def validates(form_cls=None, **fields):
+    """Adds form validation to a Flask view.
+
+    ``form_cls`` specifies the base class on which validation is performed
+    including any fields that might be present. If ``form_cls`` is not
+    specified it defaults to :class:`wtforms.Form` or the form class
+    passed to :class:`~flask_validates.FlaskValidates` if set.
+
+
+    ``fields`` specifies the fields that are to be added to ``form_cls``.
+    """
     def decorator(f):
         @wraps(f)
         def decorated_function(*args, **kwargs):
