@@ -1,5 +1,7 @@
 # Flask-Validates
 
+[![Build Status](https://travis-ci.org/tjpnz/flask-validates.svg?branch=master)](https://travis-ci.org/tjpnz/flask-validates)
+
 Painless form validation (WTForms or Flask-WTF) using view decorators.
 
 ## Quickstart
