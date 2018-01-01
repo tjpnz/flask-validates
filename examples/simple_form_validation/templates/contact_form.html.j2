@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <h1>Contact Form</h1>
+    <form method="POST" action="{{ url_for('index') }}">
+      {{ form.email_address.label }}
+      {{ form.email_address() }}
+      <br>
+      {{ form.query.label }}
+      {{ form.query(rows=5, cols=40) }}
+      <br>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
