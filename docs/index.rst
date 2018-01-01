@@ -92,11 +92,11 @@ API
 
 .. module:: flask_validates
 
-.. autoclass:: FlaskValidates
+.. autoclass:: flask_validates.FlaskValidates
     :members:
 
-.. data:: current_form
+.. data:: flask_validates.current_form
 
-   Points to the form created by :func:`~validates`.
+   Points to the form created by :func:`~flask_validates.validates`.
 
-.. autofunction:: validates
+.. autofunction:: flask_validates.validates
