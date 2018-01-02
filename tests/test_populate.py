@@ -17,7 +17,7 @@ class TestPopulate(FlaskValidatesTestCase):
 
         form_cls = build_form_class(TestForm)
         form = form_cls()
-        form.populate(obj=TestObject())
+        form = form.populate(obj=TestObject())
 
         self.assertEqual(form.field_one.data, "foo")
         self.assertEqual(form.field_two.data, "bar")

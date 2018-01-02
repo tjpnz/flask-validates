@@ -39,7 +39,8 @@ class PopulateMixin(object):
 
         ``**kwargs`` accepts arbitrary values for attributes not found on ``obj``.
         """
-        return self.process(obj=obj, data=data, **kwargs)
+        self.process(obj=obj, data=data, **kwargs)
+        return self
 
 
 def build_form_class(form_cls, **fields):
