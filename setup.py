@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 setup(
@@ -14,12 +14,16 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms="any",
+    setup_requires=[
+        "pytest-runner"
+    ],
     install_requires=[
         "Flask",
         "WTForms"
     ],
     tests_require=[
-        "Flask-WTF"
+        "Flask-WTF",
+        "pytest"
     ],
     test_suite="tests",
     classifiers=[
