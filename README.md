@@ -1,6 +1,7 @@
 # Flask-Validates
 
 [![Build Status](https://travis-ci.org/tjpnz/flask-validates.svg?branch=master)](https://travis-ci.org/tjpnz/flask-validates)
+[![Documentation Status](https://readthedocs.org/projects/flask-validates/badge/)](http://flask-validates.readthedocs.org/en/latest/)
 
 Painless form validation ([WTForms](https://github.com/wtforms/wtforms) or [Flask-WTF](https://github.com/lepture/flask-wtf)) using view decorators.
 

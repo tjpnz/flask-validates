@@ -15,8 +15,8 @@ pygments_style = "sphinx"
 project = "Flask-Validates"
 copyright = "2018, Thomas Prebble"
 author = "Thomas Prebble"
-version = "0.1.0"
-release = "0.1.0"
+version = "0.2.0"
+release = "0.2.0"
 
 
 # -- Options for HTML output ----------------------------------------------

@@ -15,7 +15,7 @@ Using pip:
 Usage
 -----
 
-Flask-Validates binds forms to views using the :func:`~flask_validates.validates` decorator, depending on how you use it Flask-Validates can eliminate the need entirely to create explicit form classes. When a view is invoked :func:`~flask_validates.validates` creates a form behind the scenes based on the fields you provide which is then exposed to the view via :data:`flask_validates.current_form` which works in a similar manner to Flask's :data:`flask.current_app`.
+Flask-Validates binds forms to views using the :func:`~flask_validates.validates` decorator, depending on how you use it Flask-Validates can eliminate the need entirely to create explicit form classes. When a view is invoked :func:`~flask_validates.validates` creates a form behind the scenes based on the fields you provide which is then exposed to the view via :data:`~flask_validates.current_form` which works in a similar manner to Flask's :data:`flask.current_app`.
 
 Alongside creating forms :func:`~flask_validates.validates` also sets the appropriate HTTP 400 response code if form validation fails.
 
