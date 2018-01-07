@@ -66,19 +66,21 @@ def validates(form_cls=None, **fields):
     ``fields`` specifies the fields that are to be added to ``form_cls``.
     """
     def decorator(f):
+        f.form_cls = form_cls
+
         @wraps(f)
         def decorated_function(*args, **kwargs):
-            nonlocal form_cls
+            _form_cls = f.form_cls
 
             ctx = stack.top
             if ctx is None:
                 return f(*args, **kwargs)
 
             # Determine the default form class if not provided
-            if form_cls is None:
-                form_cls = current_app.config.get("FLASK_VALIDATES_FORM_CLASS", Form)
+            if _form_cls is None:
+                _form_cls = current_app.config.get("FLASK_VALIDATES_FORM_CLASS", Form)
 
-            cls = build_form_class(form_cls, **fields)
+            cls = build_form_class(_form_cls, **fields)
             ctx.current_form = cls(get_form_data())
 
             resp = f(*args, **kwargs)
